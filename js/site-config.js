@@ -33,15 +33,15 @@ window.KS_CONFIG = {
     NEUROSPLOIT_REPO_URL: { value: 'https://github.com/kamalesh-sudo/neurosploit', status: 'candidate' },
     BEHAVIORAL_AUTH_REPO_URL: { value: 'https://github.com/kamalesh-sudo/Behavioral_Auth_System', status: 'candidate' },
     SATELLITE_REPO_URL: { value: 'https://github.com/kamalesh-sudo/Smooth-Visualization-of-Satellite-Imagery', status: 'candidate' },
-    SEGMENTATION_REPO_URL: { value: null, status: 'missing', note: 'Old site linked github.com/iharishragav/geo-wms-segmentation (different account)' },
-    BUG_REPORT_URL_1: { value: null, status: 'missing', note: 'Old site: clickjacking write-up under github.com/iharishragav' },
-    BUG_REPORT_URL_2: { value: null, status: 'missing', note: 'Old site: second report under github.com/iharishragav' },
+    SEGMENTATION_REPO_URL: { value: 'https://github.com/kamalesh-sudo/geo-wms-segmentation', status: 'candidate', note: 'Old site linked github.com/iharishragav/geo-wms-segmentation (different account)' },
+    BUG_REPORT_URL_1: { value: 'https://github.com/kamalesh-sudo/kamalesh-portfolio/blob/main/assets/report/fusionauth.md', status: 'candidate', note: 'Old site: clickjacking write-up under github.com/iharishragav' },
+    BUG_REPORT_URL_2: { value: 'https://github.com/kamalesh-sudo/kamalesh-portfolio/blob/main/assets/report/thefork.md', status: 'candidate', note: 'Old site: second report under github.com/iharishragav' },
 
-    EMAIL: { value: null, status: 'missing', note: 'Two different emails appear across his pages; publish only the one he picks' },
-    RESUME_URL: { value: null, status: 'missing', note: 'Terminal "resume" command shows "coming soon" until set' },
+    EMAIL: { value: 'kamalesh.bluemailx.com', status: 'candidate', note: 'Two different emails appear across his pages; publish only the one he picks' },
+    RESUME_URL: { value: 'https://github.com/kamalesh-sudo/kamalesh-portfolio/blob/main/assets/docs/Kamalesh-Cv.pdf', status: 'candidate', note: 'Terminal "resume" command shows "coming soon" until set' },
     CONTACT_FORM_ENDPOINT: { value: 'https://formspree.io/f/mblyqqjz', status: 'confirmed', note: 'Reused from the current site index.html' },
 
-    INTERN_DATES: { value: null, status: 'missing', token: '{{DATES}}', note: 'Elevate Labs internship month/year range' },
+    INTERN_DATES: { value: '23 Jun 2025 to 28 Jul 2026', status: 'candidate', token: '{{DATES}}', note: 'Elevate Labs internship month/year range' },
     NEUROSPLOIT_DATE: { value: null, status: 'missing', token: '{{DATE}}' },
     BEHAVIORAL_AUTH_DATE: { value: null, status: 'missing', token: '{{DATE}}' }
   },
