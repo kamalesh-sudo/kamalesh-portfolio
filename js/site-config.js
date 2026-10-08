@@ -42,12 +42,12 @@ window.KS_CONFIG = {
     CONTACT_FORM_ENDPOINT: { value: 'https://formspree.io/f/mblyqqjz', status: 'confirmed', note: 'Reused from the current site index.html' },
 
     INTERN_DATES: { value: '23 Jun 2025 to 28 Jul 2026', status: 'candidate', token: '{{DATES}}', note: 'Elevate Labs internship month/year range' },
-    NEUROSPLOIT_DATE: { value: null, status: 'missing', token: '{{DATE}}' },
-    BEHAVIORAL_AUTH_DATE: { value: null, status: 'missing', token: '{{DATE}}' }
+    NEUROSPLOIT_DATE: { value: 'Aug 2025', status: 'candidate', token: '{{DATE}}' },
+    BEHAVIORAL_AUTH_DATE: { value: 'Jan 2026', status: 'candidate', token: '{{DATE}}' }
   },
 
   /* Hero floating labels (user to confirm the final four). */
-  heroLabels: ['BURP SUITE', 'LINUX', 'PYTHON', 'BUGCROWD'],
+  heroLabels: ['BURP SUITE', 'ARCH', 'PYTHON', 'BUGCROWD'],
 
   /*
    * Verified certifications only. Each entry: { name, issuer, date, url }.
