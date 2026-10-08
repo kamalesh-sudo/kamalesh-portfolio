@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Know the work: reel preview</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/reel.css">
+  <style>
+    :root { --accent: var(--blue); --accent-rgb: 23 147 209; }
+    body { display: grid; place-items: center; min-height: 100vh; padding: 24px 0; }
+    .preview { width: min(100% - 32px, 1100px); }
+    .preview-note { margin-top: 14px; font: 400 .78rem var(--f-mono); color: var(--muted); }
+    .preview-note a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="preview">
+    <figure class="optic" data-reel>
+      <figcaption class="optic-head">
+        <span class="optic-label">OPTIC FEED // <b>LIVE</b></span>
+        <span class="optic-title">Know the work</span>
+        <span class="optic-hint" data-reel-hint aria-hidden="true">Tap to pause</span>
+      </figcaption>
+      <button class="reel-stage" type="button" aria-label="Pause the film">
+        <canvas class="reel-canvas" width="1600" height="900" aria-hidden="true"></canvas>
+        <span class="reel-glyph" aria-hidden="true"></span>
+        <span class="reel-progress" aria-hidden="true"><i class="reel-bar"></i></span>
+      </button>
+      <p class="sr-only">A short animated film in five steps: a product people trust; spot the weak point; prove it harmlessly; write it up clearly; help them fix it.</p>
+      <ol class="reel-frames" hidden></ol>
+    </figure>
+    <p class="preview-note">Standalone preview of the 15-second film. Add <code>?t=7.5</code> to freeze a single frame. <a href="index.html">Back to the site</a></p>
+  </main>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/reel.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () { window.KS.reel = window.KS.createReel(document.querySelector('[data-reel]')); });
+  </script>
+</body>
+</html>

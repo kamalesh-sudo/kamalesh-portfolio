@@ -1,754 +1,593 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Personal Portfolio</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kamalesh S | Security Researcher</title>
+  <meta name="description" content="Kamalesh S, security researcher and final-year IT student at Annamalai University. Web application security, bug bounty, AI and geospatial builds.">
+  <meta name="theme-color" content="#05070b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kamalesh S | Security Researcher">
+  <meta property="og:description" content="Web application security, bug bounty, and the occasional AI build.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <script>
+    (function (d) {
+      d.classList.replace('no-js', 'js');
+      var seen = false;
+      try { seen = !!sessionStorage.getItem('ks-booted'); } catch (e) {}
+      if (!seen && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('boot-pending');
+    })(document.documentElement);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/chrome.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/reel.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
-
 <body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h3.5v11H4zM5.75 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h3.3v1.6c.5-.9 1.7-1.85 3.5-1.85 3.7 0 4.2 2.4 4.2 5.5V20h-3.5v-5.1c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H10z"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 4.5 10.5 7h3L15 4.5M8 8.5h8V12a4 4 0 0 1-8 0zM8 12H4m16 0h-4m-7.5 3.5L5 18m10.5-2.5L19 18M12 8.5V19"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3.5 6h17v12h-17zM3.5 6.5l8.5 7 8.5-7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M7 17 17 7M9 7h8v8"/></symbol>
+  </svg>
 
-  <!--
-    - #MAIN
-  -->
+  <a class="skip-link" href="#about">Skip to content</a>
+  <div class="top-progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav" data-nav>
+    <a class="nav-mark" href="#hero" aria-label="Kamalesh S, back to top">KS</a>
+    <nav class="nav-primary" aria-label="Primary">
+      <ol class="nav-links">
+        <li><a href="#about" data-nav-link="about"><span>01</span>About</a></li>
+        <li><a href="#work" data-nav-link="work"><span>02</span>Work</a></li>
+        <li><a href="#education" data-nav-link="education"><span>03</span>Education</a></li>
+        <li><a href="#skills" data-nav-link="skills"><span>04</span>Skills</a></li>
+        <li><a href="#contact" data-nav-link="contact"><span>05</span>Contact</a></li>
+      </ol>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-overlay">
+      <span class="sr-only">Open menu</span><i></i><i></i>
+    </button>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay" hidden>
+    <nav aria-label="Menu">
+      <ol class="overlay-links">
+        <li><a href="#about"><span>01</span>About</a></li>
+        <li><a href="#work"><span>02</span>Work</a></li>
+        <li><a href="#education"><span>03</span>Education</a></li>
+        <li><a href="#skills"><span>04</span>Skills</a></li>
+        <li><a href="#contact"><span>05</span>Contact</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <aside class="rail" data-rail role="img" aria-label="Augmentation progress">
+    <svg class="rail-figure" viewBox="0 0 80 240" aria-hidden="true">
+      <g class="rail-body">
+        <circle cx="40" cy="30" r="17"/>
+        <path d="M40 47v13M14 72q26-12 52 0l-4 78H18zM14 72 8 140M66 72l8 68-2 50M26 150l-2 80M54 150l2 80"/>
+      </g>
+      <g class="rail-implants">
+        <circle class="implant" data-implant="0" cx="46" cy="28" r="4"/>
+        <circle class="implant" data-implant="1" cx="27" cy="23" r="4"/>
+        <circle class="implant" data-implant="2" cx="40" cy="55" r="4"/>
+        <circle class="implant" data-implant="3" cx="40" cy="98" r="5"/>
+        <circle class="implant" data-implant="4" cx="70" cy="110" r="4"/>
+        <circle class="implant" data-implant="5" cx="73" cy="186" r="4"/>
+      </g>
+    </svg>
+    <p class="rail-readout" aria-hidden="true"><span>AUGMENT</span><b data-augment>0%</b></p>
+  </aside>
+
+  <div class="cursor-ring" aria-hidden="true"></div>
 
   <main>
+    <!-- HERO -->
+    <section id="hero" class="hero" data-section="hero" aria-label="Introduction">
+      <div class="hero-pin">
+        <div class="hero-crt" aria-hidden="true"></div>
+        <ol class="boot" aria-hidden="true">
+          <li data-boot-line="&gt; KS-01 // POWER ON"></li>
+          <li data-boot-line="&gt; LOADING HUMAN CORE .... OK"></li>
+          <li data-boot-line="&gt; MOUNTING OPTICS ........ OK"></li>
+          <li data-boot-line="&gt; LINKING NEURAL STACK ... OK"></li>
+          <li data-boot-line="&gt; HELLO."></li>
+        </ol>
 
-    <!--
-      - #SIDEBAR
-    -->
+        <div class="wrap hero-grid">
+          <div class="hero-copy" data-hero-copy>
+            <h1 class="hero-name" aria-label="I am Kamalesh S">
+              <span class="hero-iam" data-scramble>I AM</span>
+              <span class="hero-full" data-scramble>KAMALESH S</span>
+            </h1>
+            <p class="chip chip-title" data-boot="chip">SECURITY RESEARCHER</p>
+            <p class="hero-line" data-boot="line">Security researcher and final-year IT student who finds weaknesses in web applications and helps get them fixed.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work" data-boot="btn1">View Work</a>
+              <a class="btn" href="#contact" data-boot="btn2">Contact</a>
+            </div>
+            <ul class="socials" data-boot="socials">
+              <li><a href="https://github.com/kamalesh-sudo" data-ph-href="GITHUB_PROFILE_URL" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a></li>
+              <li><a href="https://www.linkedin.com/in/kamalesh-s-260588305/" data-ph-href="LINKEDIN_URL" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+              <li><a href="https://bugcrowd.com/h/kamalesh2428k" data-ph-href="BUGCROWD_PROFILE_URL" target="_blank" rel="noopener" aria-label="Bugcrowd"><svg><use href="#i-bug"/></svg></a></li>
+            </ul>
+          </div>
 
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Kamalesh S" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Kamalesh S">Kamalesh S</h1>
-
-          <p class="title">Security Researcher</p>
+          <div class="hero-stage" data-stage>
+            <div class="stage-tilt">
+              <div class="layer layer-grid" style="--d:.15" aria-hidden="true"></div>
+              <div class="layer layer-ghost" style="--d:.3" aria-hidden="true">KS</div>
+              <div class="layer layer-portrait" style="--d:.55">
+                <div class="portrait" data-portrait>
+                  <span class="portrait-glow" aria-hidden="true"></span>
+                  <img class="portrait-img portrait-human" data-portrait-img src="assets/images/portrait-standin.svg" alt="Portrait of Kamalesh S" width="600" height="760" decoding="async">
+                  <img class="portrait-img portrait-machine" data-portrait-img src="assets/images/portrait-standin.svg" alt="" aria-hidden="true" width="600" height="760">
+                  <span class="portrait-xray" aria-hidden="true">
+                    <img class="portrait-img" data-portrait-img src="assets/images/portrait-standin.svg" alt="" width="600" height="760">
+                    <span class="portrait-circuit"></span>
+                  </span>
+                  <span class="portrait-seam" aria-hidden="true"></span>
+                  <span class="portrait-scan" aria-hidden="true"></span>
+                  <span class="xray-line" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="layer layer-hud" style="--d:.7" aria-hidden="true">
+                <svg class="hud" viewBox="0 0 600 760">
+                  <g class="hud-eye">
+                    <circle cx="345" cy="292" r="34"/>
+                    <circle cx="345" cy="292" r="48" class="hud-dash"/>
+                    <path d="M345 236v26M345 322v26M289 292h26M375 292h26"/>
+                  </g>
+                  <path class="hud-corner" d="M80 80h40M80 80v40M520 80h-40M520 80v40M80 680h40M80 680v-40M520 680h-40M520 680v-40"/>
+                  <text x="402" y="250">OPTIC.R</text>
+                </svg>
+              </div>
+              <div class="layer layer-labels" style="--d:1" data-boot="labels" aria-hidden="true">
+                <span class="pill" data-hero-label style="--x:-6%;--y:18%;--bob:5.2s;--z:.9"></span>
+                <span class="pill" data-hero-label style="--x:78%;--y:46%;--bob:6.4s;--z:1.1"></span>
+                <span class="pill" data-hero-label style="--x:-12%;--y:62%;--bob:7.1s;--z:1"></span>
+                <span class="pill" data-hero-label style="--x:70%;--y:76%;--bob:5.8s;--z:.85"></span>
+              </div>
+              <span class="stage-spot" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <p class="scroll-cue" data-boot="cue" aria-hidden="true">SCROLL TO AUGMENT</p>
+      </div>
+    </section>
 
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+    <!-- ABOUT -->
+    <section id="about" class="section about" data-section="about" aria-labelledby="about-title">
+      <div class="about-backdrop" aria-hidden="true">
+        <img data-portrait-img src="assets/images/portrait-standin.svg" alt="" width="600" height="760" loading="lazy">
+      </div>
+      <div class="wrap about-grid">
+        <div class="about-figure" aria-hidden="true">
+          <svg viewBox="0 0 200 260">
+            <path class="fig-line" d="M100 20c-30 0-48 24-48 56 0 26 12 46 28 56v18c-38 8-62 30-70 70h180c-8-40-32-62-70-70v-18c16-10 28-30 28-56 0-32-18-56-48-56z"/>
+            <path class="fig-trace" d="M118 70h30l10 10M100 150v40h-30M128 200l20 20h30"/>
+            <circle class="implant" data-about-implant="0" cx="118" cy="70" r="6"/>
+            <circle class="implant" data-about-implant="1" cx="100" cy="150" r="6"/>
+            <circle class="implant" data-about-implant="2" cx="128" cy="200" r="6"/>
+          </svg>
+          <p class="fig-label">SUBJECT // KS-01</p>
+        </div>
 
+        <div class="about-body">
+          <header class="section-head reveal">
+            <p class="kicker">01 // ABOUT</p>
+            <h2 id="about-title">The human core</h2>
+          </header>
+
+          <div class="about-block reveal" data-about-block="0">
+            <p class="block-tag">WHO</p>
+            <p>I'm Kamalesh, a final-year Information Technology student at Annamalai University (2022 to 2026), based in Cuddalore, Tamil Nadu.</p>
+          </div>
+          <div class="about-block reveal" data-about-block="1">
+            <p class="block-tag">WHAT</p>
+            <p>I research web application security and report vulnerabilities through bug bounty programs on Bugcrowd. I also build backend, AI and geospatial projects, usually from an Arch Linux setup.</p>
+          </div>
+          <div class="about-block reveal" data-about-block="2">
+            <p class="block-tag">NEXT</p>
+            <p>I'm exploring where AI and security meet, through open source, hackathons and capture-the-flag challenges.</p>
+          </div>
+
+          <ul class="stats reveal">
+            <li class="stat"><b data-count="2">2</b><span>hackathons built for</span></li>
+            <li class="stat"><b data-count="4">4</b><span>featured builds</span></li>
+            <li class="stat"><b data-count="2024" data-from="2016">2024</b><span>researching since</span></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:Kamalesh.offical2004@gmail.com" class="contact-link">Kamalesh.offical2004@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+91 638115980" class="contact-link">+91 6383115980</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="2004-01-25">jan 25, 2004</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>cuddalore, tamilnadu, india</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
+      <div class="wrap">
+        <figure class="optic reveal" data-reel>
+          <figcaption class="optic-head">
+            <span class="optic-label">OPTIC FEED // <b>LIVE</b></span>
+            <span class="optic-title">Know the work</span>
+            <span class="optic-hint" data-reel-hint aria-hidden="true">Tap to pause</span>
+          </figcaption>
+          <button class="reel-stage" type="button" aria-label="Pause the film">
+            <canvas class="reel-canvas" width="1600" height="900" aria-hidden="true"></canvas>
+            <span class="reel-glyph" aria-hidden="true"></span>
+            <span class="reel-progress" aria-hidden="true"><i class="reel-bar"></i></span>
+          </button>
+          <p class="sr-only">A short animated film in five steps: a product people trust; spot the weak point; prove it harmlessly; write it up clearly; help them fix it.</p>
+          <ol class="reel-frames" hidden></ol>
+          <noscript>
+            <ol class="reel-noscript">
+              <li>A product people trust.</li>
+              <li>Spot the weak point.</li>
+              <li>Prove it. Harmlessly.</li>
+              <li>Write it up clearly.</li>
+              <li>Help them fix it.</li>
+            </ol>
+          </noscript>
+        </figure>
       </div>
+    </section>
 
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
+    <!-- WORK -->
+    <section id="work" class="section work" data-section="work" aria-labelledby="work-title">
+      <div class="rack-rails" aria-hidden="true"><span></span><span></span><span></span><i>RACK 01 // MOUNTING</i></div>
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">02 // WORK</p>
+          <h2 id="work-title">Roles and builds</h2>
         </header>
 
-        <section class="about-text">
-          <p>
-            I'm Kamalesh, a passionate Information Technology student at Annamalai University (2022–2026) with a deep interest in cybersecurity, ethical hacking, and system-level development. I actively participate in real-world vulnerability research on platforms like Bugcrowd and have hands-on experience with tools like Wireshark, Aircrack-ng, and Burp Suite.
-          </p>
+        <div class="stack" data-stack>
+          <p class="divider">// ROLES</p>
 
-          <p>
-            Beyond security, I've built innovative projects involving AI-driven frame interpolation and semantic segmentation using real-world map data. I thrive in Linux environments (especially Arch Linux with KDE Plasma), and love customizing and optimizing systems from the ground up.
-          </p>
-          <p>
-            Currently, I’m exploring the intersection of AI and cybersecurity while contributing to open-source projects, hackathons, and Capture The Flag (CTF) challenges.          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
+          <article class="card" data-card style="--i:0">
+            <div class="card-panel">
+              <div class="card-bar"><span>01 / 06</span><span class="tag">ROLE</span><span class="card-date">2 months, <span class="ph" data-ph-text="INTERN_DATES" title="{{DATES}}">dates to confirm</span></span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>Cybersecurity Intern, Elevate Labs</h3>
+                  <p class="card-sum">Vulnerability assessments and security audits for a security solution provider.</p>
+                  <p class="card-impact">Assessed web applications with Burp Suite, OWASP ZAP and Nmap.</p>
+                  <ul class="chips"><li>Burp Suite</li><li>OWASP ZAP</li><li>Nmap</li></ul>
+                  <div class="card-actions">
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-1">Details</button>
+                  </div>
+                  <ul class="card-details" id="details-1">
+                    <li>Ran vulnerability assessments with industry-standard tools.</li>
+                    <li>Performed security audits on web applications.</li>
+                    <li>A two-month engagement with a security solution provider.</li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-intern" viewBox="0 0 240 160">
+                    <rect class="v-line" x="20" y="16" width="200" height="128"/>
+                    <path class="v-line" d="M20 34h200"/>
+                    <rect class="v-fill" x="34" y="48" width="90" height="10"/>
+                    <rect class="v-fill" x="34" y="66" width="150" height="6"/>
+                    <rect class="v-fill" x="34" y="80" width="130" height="6"/>
+                    <rect class="v-fill" x="34" y="100" width="60" height="26"/>
+                    <rect class="v-fill" x="104" y="100" width="60" height="26"/>
+                    <g class="lens"><circle cx="0" cy="0" r="20"/><path d="M14 14l14 14"/></g>
+                    <g class="flag"><path d="M150 112v-28"/><path class="flag-cloth" d="M150 84h22l-6 7 6 7h-22z"/></g>
+                  </svg>
+                </div>
               </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Bug Bounty & Vulnerability Research</h4>
-
-                <p class="service-item-text">
-                  Actively hunting for real-world security flaws on platforms like Bugcrowd, focusing on misconfigurations, injection flaws, and recon-based enumeration.                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title"> Linux Customization & Automation</h4>
-
-                <p class="service-item-text">
-                  Daily driver on Arch Linux (KDE), optimizing workflows with Bash scripts and system tools for ethical hacking and development.                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">CTFs & TryHackMe Learning</h4>
-
-                <p class="service-item-text">
-                  Solving challenges on TryHackMe to deepen skills in offensive and defensive security, forensics, and WiFi/network exploitation.                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title"> System-Level Development</h4>
-
-                <p class="service-item-text">
-Building a custom authentication-enhanced mouse with features like eye detection and real-time OCR using low-level system tools.
-
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        
-
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
             </div>
+          </article>
 
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Annamalai University</h4>
-
-              <span>2022 — 2024</span>
-
-              <p class="timeline-text">
-                Pursuing Bachelor of Engineering in Information Technology with a strong focus on cybersecurity, system programming, and AI integration.
-              </p>
-
-            </li>
-
-
-            
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          <article class="card" data-card style="--i:1">
+            <div class="card-panel">
+              <div class="card-bar"><span>02 / 06</span><span class="tag">ROLE</span><span class="card-date">2024 to present</span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>Cybersecurity Researcher, Bugcrowd</h3>
+                  <p class="card-sum">Independent vulnerability research, reported through Bugcrowd programs.</p>
+                  <p class="card-impact">Reported rate-limiting bypasses, server misconfigurations and injection issues.</p>
+                  <ul class="chips"><li>Bug bounty</li><li>Recon</li><li>Web security</li></ul>
+                  <div class="card-actions">
+                    <a class="btn btn-sm" href="https://bugcrowd.com/h/kamalesh2428k" data-ph-href="BUGCROWD_PROFILE_URL" target="_blank" rel="noopener">Bugcrowd profile<svg><use href="#i-arrow"/></svg></a>
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-2">Details</button>
+                  </div>
+                  <ul class="card-details" id="details-2">
+                    <li>Finds and documents issues across public bug bounty programs.</li>
+                    <li><a href="#" data-ph-href="BUG_REPORT_URL_1" target="_blank" rel="noopener">Write-up: clickjacking report</a></li>
+                    <li><a href="#" data-ph-href="BUG_REPORT_URL_2" target="_blank" rel="noopener">Write-up: vulnerability report</a></li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-lock" viewBox="0 0 240 160">
+                    <g class="lock">
+                      <path class="shackle" d="M100 72V54a20 20 0 0 1 40 0v18"/>
+                      <rect class="lock-body" x="88" y="72" width="64" height="50"/>
+                      <circle class="lock-hole" cx="120" cy="94" r="5"/>
+                    </g>
+                    <circle class="check-ring" cx="120" cy="97" r="44"/>
+                    <path class="check" d="M108 97l8 8 16-16"/>
+                  </svg>
+                </div>
+              </div>
             </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Ex Intern — Cybersecurity</h4>
-
-              <span>Elevate Labs (Security Solution Provider) — 2 months</span>
-
-              <p class="timeline-text">
-                Completed a comprehensive cybersecurity internship at Elevate Labs, working on real-world security assessments and penetration testing projects. Conducted vulnerability assessments using industry-standard tools (Burp Suite, OWASP ZAP, Nmap), performed security audits on web applications, and assisted in identifying critical security flaws including SQL injection, XSS, and authentication bypass vulnerabilities. Collaborated with senior security analysts on client security reports and contributed to security solution implementations, gaining hands-on experience in threat analysis, risk assessment, and remediation strategies.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Cybersecurity Researcher </h4>
-
-              <span>2024 — Present</span>
-
-              <p class="timeline-text">
-                Actively identifying and reporting security vulnerabilities on platforms like Bugcrowd. Successfully discovered and documented multiple critical issues including rate limiting bypasses, server misconfigurations, and injection vulnerabilities, contributing to improved security posture of various organizations.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Participant — Rackathon</h4>
-
-              <span>March 2024</span>
-
-              <p class="timeline-text">
-                Developed an innovative semantic segmentation tool for satellite map data analysis. Integrated real-time data layers using Web Map Service (WMS) and GeoServer, enabling efficient geospatial data processing and visualization.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Smart India Hackathon</h4>
-
-              <span>July 2024</span>
-
-              <p class="timeline-text">
-                Created an advanced visualization system that generates seamless, interpolated video transitions from satellite imagery using a custom deep learning model. The solution enables temporal change analysis and smooth visualization of geospatial data over time.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Cybersecurity & Ethical Hacking </h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Linux (Arch, Kali, System Customization) </h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Wireshark, Aircrack-ng, Burp Suite</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Python & Bash Scripting </h5>
-                <data value="60">60%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">CTFs & TryHackMe Challenges  </h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Bug Bounty & Vulnerability Research (Bugcrowd)   </h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Cybersecurity</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Bug Bounty</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Cybersecurity</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Bug Bounty</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="cybersecurity development">
-              <a href="https://github.com/iharishragav/neurosploit" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+          </article>
+
+          <p class="divider">// BUILDS</p>
+
+          <article class="card" data-card style="--i:2">
+            <div class="card-panel">
+              <div class="card-bar"><span>03 / 06</span><span class="tag">BUILD</span><span class="card-date"><span class="ph" data-ph-text="NEUROSPLOIT_DATE" title="{{DATE}}">date to confirm</span></span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>NeuroSploit</h3>
+                  <p class="card-sum">An interactive recon framework with a terminal interface.</p>
+                  <p class="card-impact">Asynchronous scanning, plus a headless mode for automation.</p>
+                  <ul class="chips"><li>Recon</li><li>Async scanning</li><li>Terminal UI</li></ul>
+                  <div class="card-actions">
+                    <a class="btn btn-sm" href="https://github.com/kamalesh-sudo/neurosploit" data-ph-href="NEUROSPLOIT_REPO_URL" target="_blank" rel="noopener">Repository<svg><use href="#i-arrow"/></svg></a>
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-3">Details</button>
                   </div>
-
-                  <img src="./assets/images/neurosploit.jpeg" alt="NeuroSploit AI-Powered Red Team Assistant" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">NeuroSploit</h3>
-
-                <p class="project-category">cybersecurity, Development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="bug bounty cybersecurity">
-              <a href="https://github.com/iharishragav/Bughunting/blob/main/fusionauth.md">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/fusionauth.jpeg" alt="Bug Bounty Report for FusionAuth" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Clickjacking on FusionAuth</h3>
-
-                <p class="project-category">Bug Bounty, Cybersecurity</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="development">
-              <a href="https://github.com/iharishragav/geo-wms-segmentation">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/EDGE-BASED SEMANTIC SEGMENTATION OF GEOSPATIAL WMS DATA.jpeg" alt="Geospatial Semantic Segmentation" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Geospatial Semantic Segmentation(SIH)</h3>
-
-                <p class="project-category">Development</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="development">
-              <a href="https://github.com/iharishragav/Smooth-Visualization-of-Satellite-Imagery" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/Smooth-Visualization-of-Satellite-Imagery.jpeg" alt="Smooth Satellite Visualization" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Smooth Satellite Imagery Visualization(SIH)</h3>
-
-                <p class="project-category">Development</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="development">
-              <a href="https://github.com/iharishragav/SmartWardrobe" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/smartwardobe.jpeg" alt="SmartWardrobe" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">SmartWardrobe(Rackathon)</h3>
-
-                <p class="project-category">Development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="bug bounty cybersecurity">
-              <a href="https://github.com/iharishragav/Bughunting/blob/main/thefork.md">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/thefork.jpeg" alt="Vulnerability Report for TheFork" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Vulnerability Report for TheFork</h3>
-
-                <p class="project-category">Bug Bounty, Cybersecurity</p>
-
-              </a>
-            </li>
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55977.34724645713!2d79.6565144672797!3d11.401660818908903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54c23aa1bce10b%3A0xe1a29e91a8ec81aa!2sChidambaram%2C%20Tamil%20Nadu!5e1!3m2!1sen!2sin!4v1746030966213!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="https://formspree.io/f/mblyqqjz" method="POST" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+                  <ul class="card-details" id="details-3">
+                    <li>Interactive terminal interface for reconnaissance.</li>
+                    <li>Scans run asynchronously.</li>
+                    <li>Headless mode for running without the interface.</li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-term" viewBox="0 0 240 160">
+                    <rect class="v-line" x="16" y="14" width="208" height="132"/>
+                    <path class="v-line" d="M16 30h208"/>
+                    <circle class="v-dot" cx="28" cy="22" r="3"/><circle class="v-dot" cx="40" cy="22" r="3"/><circle class="v-dot" cx="52" cy="22" r="3"/>
+                    <text class="cmd" x="28" y="52">$ neurosploit --scan</text>
+                    <rect class="v-line" x="28" y="64" width="184" height="8"/>
+                    <rect class="bar" x="28" y="64" width="184" height="8"/>
+                    <rect class="row" x="28" y="86" width="120" height="6" style="--k:0"/>
+                    <rect class="row" x="28" y="100" width="150" height="6" style="--k:1"/>
+                    <rect class="row" x="28" y="114" width="96" height="6" style="--k:2"/>
+                    <rect class="row" x="28" y="128" width="136" height="6" style="--k:3"/>
+                  </svg>
+                </div>
+              </div>
             </div>
+          </article>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+          <article class="card" data-card style="--i:3">
+            <div class="card-panel">
+              <div class="card-bar"><span>04 / 06</span><span class="tag">BUILD</span><span class="card-date"><span class="ph" data-ph-text="BEHAVIORAL_AUTH_DATE" title="{{DATE}}">date to confirm</span></span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>Behavioral Auth System</h3>
+                  <p class="card-sum">Authentication that weighs how someone behaves, not just what they type.</p>
+                  <p class="card-impact">Real-time risk scoring with role-based access.</p>
+                  <ul class="chips"><li>Risk scoring</li><li>Role-based access</li><li>Device and IP blocking</li></ul>
+                  <div class="card-actions">
+                    <a class="btn btn-sm" href="https://github.com/kamalesh-sudo/Behavioral_Auth_System" data-ph-href="BEHAVIORAL_AUTH_REPO_URL" target="_blank" rel="noopener">Repository<svg><use href="#i-arrow"/></svg></a>
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-4">Details</button>
+                  </div>
+                  <ul class="card-details" id="details-4">
+                    <li>Behaviour-based authentication.</li>
+                    <li>Real-time risk scoring and role-based access.</li>
+                    <li>Blocks suspicious devices and IP addresses.</li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-auth" viewBox="0 0 240 160">
+                    <path class="trail" pathLength="100" d="M24 120c20-40 40 10 60-30s30-50 50-20 20 40 40 0"/>
+                    <path class="v-cursor" d="M0 0l0 14 4-4 3 7 3-1-3-7 6 0z"/>
+                    <rect class="v-line" x="200" y="24" width="16" height="112"/>
+                    <rect class="meter" x="200" y="24" width="16" height="112"/>
+                    <text class="v-label" x="182" y="150">TRUST</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </article>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+          <article class="card" data-card style="--i:4">
+            <div class="card-panel">
+              <div class="card-bar"><span>05 / 06</span><span class="tag">BUILD</span><span class="card-date">July 2024</span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>Smooth Visualization of Satellite Imagery</h3>
+                  <p class="card-sum">Smart India Hackathon: smooth, interpolated video transitions from satellite imagery.</p>
+                  <p class="card-impact">A custom deep learning model makes change over time easy to see.</p>
+                  <ul class="chips"><li>Deep learning</li><li>Frame interpolation</li><li>Geospatial</li></ul>
+                  <div class="card-actions">
+                    <a class="btn btn-sm" href="https://github.com/kamalesh-sudo/Smooth-Visualization-of-Satellite-Imagery" data-ph-href="SATELLITE_REPO_URL" target="_blank" rel="noopener">Repository<svg><use href="#i-arrow"/></svg></a>
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-5">Details</button>
+                  </div>
+                  <ul class="card-details" id="details-5">
+                    <li>Built for Smart India Hackathon, July 2024.</li>
+                    <li>Generates interpolated frames between satellite captures.</li>
+                    <li>Supports temporal change analysis of geospatial data.</li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-sat" viewBox="0 0 240 160">
+                    <path class="grid" d="M20 20h200v104H20zM60 20v104M100 20v104M140 20v104M180 20v104M20 46h200M20 72h200M20 98h200"/>
+                    <path class="land land-a" d="M44 92c10-30 40-40 60-26s40-8 56 8 10 36-20 34-40 6-60-2-42 2-36-14z"/>
+                    <path class="land land-b" d="M60 70c20-26 52-30 70-12s44 4 50 24-20 32-48 26-58 8-70-8-12-14-2-30z"/>
+                    <path class="v-line" d="M20 142h200"/>
+                    <rect class="tick" x="18" y="136" width="4" height="12"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          </form>
+          <article class="card" data-card style="--i:5">
+            <div class="card-panel">
+              <div class="card-bar"><span>06 / 06</span><span class="tag">BUILD</span><span class="card-date">March 2025</span></div>
+              <div class="card-body">
+                <div class="card-main">
+                  <h3>Geospatial Semantic Segmentation</h3>
+                  <p class="card-sum">Rackathon: a semantic segmentation tool for satellite map data.</p>
+                  <p class="card-impact">Real-time data layers integrated through WMS and GeoServer.</p>
+                  <ul class="chips"><li>Semantic segmentation</li><li>WMS</li><li>GeoServer</li></ul>
+                  <div class="card-actions">
+                    <a class="btn btn-sm" href="#" data-ph-href="SEGMENTATION_REPO_URL" target="_blank" rel="noopener">Repository<svg><use href="#i-arrow"/></svg></a>
+                    <button class="card-more" type="button" aria-expanded="false" aria-controls="details-6">Details</button>
+                  </div>
+                  <ul class="card-details" id="details-6">
+                    <li>Built at Rackathon, March 2025.</li>
+                    <li>Segments satellite map data into classes.</li>
+                    <li>Pulls live layers from Web Map Service and GeoServer.</li>
+                  </ul>
+                </div>
+                <div class="card-visual" aria-hidden="true">
+                  <svg class="viz viz-seg" viewBox="0 0 240 160" data-seg-grid></svg>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <p class="form-status"></p>
-
-        </section>
-
-      </article>
-
+    <!-- Work -> Education: memory rewind -->
+    <div class="tx tx-rewind" data-rewind aria-hidden="true">
+      <div class="tx-sticky">
+        <div class="rewind-strips" data-rewind-strips></div>
+        <template data-rewind-recap>
+          <div class="recap">
+            <p class="recap-k">// WORK LOG</p>
+            <p>01 ROLE  Cybersecurity Intern</p>
+            <p>02 ROLE  Cybersecurity Researcher</p>
+            <p>03 BUILD NeuroSploit</p>
+            <p>04 BUILD Behavioral Auth System</p>
+            <p>05 BUILD Satellite Visualization</p>
+            <p>06 BUILD Semantic Segmentation</p>
+            <p class="recap-k">&lt;&lt; REWIND TO ORIGIN</p>
+          </div>
+        </template>
+      </div>
     </div>
 
+    <!-- EDUCATION -->
+    <section id="education" class="section education" data-section="education" aria-labelledby="edu-title">
+      <div class="wrap edu-inner">
+        <header class="section-head reveal">
+          <p class="kicker">03 // EDUCATION AND CERTIFICATIONS</p>
+          <h2 id="edu-title">Origin log</h2>
+        </header>
+        <div class="edu-grid">
+          <div class="edu-col">
+            <h3 class="col-title">Education</h3>
+            <article class="panel edu-card">
+              <p class="mono-k">ANNAMALAI UNIVERSITY</p>
+              <h4>B.E. Information Technology</h4>
+              <p class="edu-years">2022 to 2026 · Final year</p>
+              <ol class="origin-log" data-origin-log>
+                <li><span>2022</span>Enrolled, B.E. Information Technology</li>
+                <li><span>2024</span>Smart India Hackathon, satellite imagery</li>
+                <li><span>2025</span>Rackathon, geospatial segmentation</li>
+                <li><span>2026</span>Graduating</li>
+              </ol>
+            </article>
+          </div>
+          <div class="edu-col">
+            <h3 class="col-title">Certifications</h3>
+            <ul class="certs" data-certs>
+              <li class="cert cert-pending">
+                <span class="cert-k">QUEUE // 00</span>
+                <b>More in progress</b>
+                <span>Verified certifications will appear here.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills" data-section="skills" aria-labelledby="skills-title">
+      <div class="skills-pin" data-power>
+        <div class="skills-board" data-board>
+          <span class="board-flash" aria-hidden="true"></span>
+          <div class="wrap">
+            <header class="section-head reveal">
+              <p class="kicker">04 // SKILLS</p>
+              <h2 id="skills-title">Installed modules</h2>
+            </header>
+            <ul class="legend" aria-label="Proficiency legend">
+              <li><i class="lvl lvl-learning"></i>Learning</li>
+              <li><i class="lvl lvl-working"></i>Working</li>
+              <li><i class="lvl lvl-strong"></i>Strong</li>
+            </ul>
+            <div class="bays" data-bays></div>
+            <noscript>
+              <div class="bays">
+                <section class="bay"><h3>Security</h3><p>Burp Suite, OWASP ZAP, Nmap, Wireshark, Aircrack-ng, Metasploit</p></section>
+                <section class="bay"><h3>Systems and Linux</h3><p>Arch Linux, Kali, Bash, Hyprland</p></section>
+                <section class="bay"><h3>Development</h3><p>Python, FastAPI, REST APIs</p></section>
+                <section class="bay"><h3>AI and Geospatial</h3><p>Semantic segmentation, frame interpolation, WMS and GeoServer</p></section>
+              </div>
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
+  <footer id="contact" class="footer" data-section="contact" aria-labelledby="footer-title">
+    <div class="wrap footer-grid">
+      <div class="footer-id">
+        <p class="idle"><span class="block-cursor" aria-hidden="true"></span>SYSTEM IDLE // 05 CONTACT</p>
+        <h2 id="footer-title">KAMALESH S</h2>
+        <p class="footer-role">Security Researcher · Cuddalore, Tamil Nadu, India</p>
+        <ul class="socials">
+          <li><a href="https://github.com/kamalesh-sudo" data-ph-href="GITHUB_PROFILE_URL" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/kamalesh-s-260588305/" data-ph-href="LINKEDIN_URL" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="https://bugcrowd.com/h/kamalesh2428k" data-ph-href="BUGCROWD_PROFILE_URL" target="_blank" rel="noopener" aria-label="Bugcrowd"><svg><use href="#i-bug"/></svg></a></li>
+          <li data-email-item hidden><a href="#" data-ph-href="EMAIL" data-mailto aria-label="Email"><svg><use href="#i-mail"/></svg></a></li>
+        </ul>
 
+        <div class="term" data-term>
+          <p class="term-head">ks@standby:~ <span>type or tap a command</span></p>
+          <div class="term-log" data-term-log aria-live="polite"></div>
+          <form class="term-form" data-term-form>
+            <label for="term-input">$</label>
+            <input id="term-input" name="cmd" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="help" aria-label="Terminal command">
+          </form>
+          <div class="term-chips">
+            <button type="button" data-cmd="contact">contact</button>
+            <button type="button" data-cmd="github">github</button>
+            <button type="button" data-cmd="linkedin">linkedin</button>
+            <button type="button" data-cmd="resume">resume</button>
+            <button type="button" data-cmd="help">help</button>
+          </div>
+        </div>
+      </div>
 
+      <form class="contact-form panel" action="https://formspree.io/f/mblyqqjz" method="POST" data-contact-form>
+        <p class="mono-k">TRANSMIT // MESSAGE</p>
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Message<textarea name="message" rows="4" required></textarea></label>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <p class="form-note">Messages are delivered to Kamalesh's inbox through Formspree.</p>
+        <p class="form-status" data-form-status role="status"></p>
+      </form>
+    </div>
+    <div class="wrap footer-base">
+      <p>© 2026 Kamalesh S</p>
+      <p>Built with HTML, CSS and a little JS.</p>
+    </div>
+  </footer>
 
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="js/site-config.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/chrome.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/reel.js" defer></script>
+  <script src="js/sections.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
-
 </html>

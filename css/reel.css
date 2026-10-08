@@ -1,0 +1,114 @@
+.optic {
+  --cut: 18px;
+  --bd: rgb(var(--accent-rgb) / .35);
+  padding: 12px 12px 14px;
+  margin: clamp(56px, 8vw, 96px) 0 0;
+}
+.optic-head {
+  display: flex; align-items: center; gap: 18px;
+  padding: 4px 6px 12px;
+  font: 500 .7rem var(--f-mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.optic-label { display: inline-flex; align-items: center; gap: 8px; }
+.optic-label::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--accent);
+  animation: blink 1.6s steps(1) infinite;
+}
+.optic-label b { color: var(--accent); font-weight: 500; }
+.optic.is-paused .optic-label b { color: var(--muted); }
+.optic.is-paused .optic-label::before { animation: none; opacity: .4; }
+.optic-title { color: var(--text); }
+.optic-hint { margin-left: auto; }
+
+.reel-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0; border: 0;
+  background: var(--void);
+  cursor: pointer;
+  overflow: hidden;
+}
+.reel-stage[hidden] { display: none; }
+.reel-stage:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.reel-canvas { width: 100%; height: 100%; }
+.reel-stage::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, rgb(255 255 255 / .02) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+
+.reel-glyph {
+  position: absolute; right: 16px; top: 14px;
+  width: 38px; height: 38px;
+  border: 1px solid rgb(215 227 238 / .25);
+  background: rgb(5 7 11 / .6);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.reel-glyph::before, .reel-glyph::after {
+  content: '';
+  position: absolute; top: 11px;
+  width: 4px; height: 14px;
+  background: var(--text);
+}
+.reel-glyph::before { left: 13px; }
+.reel-glyph::after { left: 20px; }
+.reel-stage:hover .reel-glyph, .reel-stage:focus-visible .reel-glyph, .optic.is-paused .reel-glyph { opacity: 1; }
+.optic.is-paused .reel-glyph::before {
+  left: 14px; top: 10px;
+  width: 0; height: 0;
+  background: none;
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent var(--text);
+}
+.optic.is-paused .reel-glyph::after { display: none; }
+
+.reel-progress {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: rgb(215 227 238 / .08);
+}
+.reel-bar {
+  position: absolute; inset: 0;
+  background: var(--glow);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.reel-tick {
+  position: absolute; bottom: 0;
+  width: 2px; height: 9px;
+  margin-left: -1px;
+  background: rgb(215 227 238 / .55);
+}
+
+.reel-frames {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.reel-frames[hidden] { display: none; }
+.reel-frames canvas { width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--line); }
+.reel-frames p, .reel-noscript li {
+  margin-top: 8px;
+  font: 500 .74rem var(--f-mono);
+  color: var(--muted);
+}
+.reel-noscript { display: grid; gap: 4px; padding: 16px; list-style: decimal inside; }
+.no-js .reel-stage { display: none; }
+.optic.is-static .optic-hint { display: none; }
+
+@media (max-width: 820px) {
+  .optic { --cut: 12px; padding: 8px 8px 10px; }
+  .optic-head { gap: 10px; font-size: .6rem; letter-spacing: .14em; flex-wrap: wrap; }
+  .optic-title { display: none; }
+  .reel-frames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
