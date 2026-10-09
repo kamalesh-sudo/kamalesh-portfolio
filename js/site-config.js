@@ -13,7 +13,7 @@ window.KS_CONFIG = {
       note: 'Transparent-background portrait, e.g. png'
     },
     PHOTO_PORTRAIT_FALLBACK: {
-      value: 'assets/images/Neon-Cyborg-Portrait.png',
+      value: 'assets/images/kamalesh-portrait-cutout.png',
       status: 'candidate',
       note: 'Normal portrait shown in a chamfered frame, e.g. assets/images/kamalesh-portrait.jpg'
     },
@@ -23,7 +23,7 @@ window.KS_CONFIG = {
       note: 'Code-drawn silhouette used until a real photo is supplied'
     },
     FAVICON: { value: 'assets/images/favicon.svg', status: 'candidate', note: 'Code-drawn KS monogram; supply favicon.ico if preferred' },
-    OG_IMAGE: { value: null, status: 'missing', note: '1200x630 share image, e.g. assets/images/og-preview.png' },
+    OG_IMAGE: { value: 'assets/images/OS-cutout.png', status: 'candidate', note: '1200x630 share image, e.g. assets/images/og-preview.png' },
 
     GITHUB_PROFILE_URL: { value: 'https://github.com/kamalesh-sudo', status: 'candidate' },
     LINKEDIN_URL: { value: 'https://www.linkedin.com/in/kamalesh-s-260588305/', status: 'candidate' },
