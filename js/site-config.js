@@ -8,13 +8,13 @@
 window.KS_CONFIG = {
   placeholders: {
     PHOTO_PORTRAIT_CUTOUT: {
-      value: null,
-      status: 'missing',
-      note: 'Transparent-background portrait, e.g. assets/images/kamalesh-portrait-cutout.png'
+      value: 'assets/images/kamalesh-portrait-cutout.jpg',
+      status: 'candidate',
+      note: 'Transparent-background portrait, e.g. png'
     },
     PHOTO_PORTRAIT_FALLBACK: {
-      value: null,
-      status: 'missing',
+      value: 'assets/images/Neon-Cyborg-Portrait.png',
+      status: 'candidate',
       note: 'Normal portrait shown in a chamfered frame, e.g. assets/images/kamalesh-portrait.jpg'
     },
     PORTRAIT_STANDIN: {
