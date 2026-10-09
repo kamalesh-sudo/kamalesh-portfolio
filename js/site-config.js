@@ -8,7 +8,7 @@
 window.KS_CONFIG = {
   placeholders: {
     PHOTO_PORTRAIT_CUTOUT: {
-      value: 'assets/images/kamalesh-portrait-cutout.jpg',
+      value: 'assets/images/kamalesh-portrait-cutout.png',
       status: 'candidate',
       note: 'Transparent-background portrait, e.g. png'
     },
